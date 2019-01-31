@@ -1,7 +1,7 @@
 from discord.ext import commands
 import json
 import os
-commandPrefix = '!'
+commandPrefix = '*'
 bot = commands.Bot(command_prefix=commandPrefix)
 
 maxVotes = {"vote": 1,
