@@ -186,4 +186,4 @@ async def motions():
         allMotions += motions[i]
     await bot.say(allMotions)
 
-bot.run(os.environ.get('TOKEN'))
+bot.run(os.environ.get('GERMANTOKEN'))
