@@ -16,17 +16,18 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F',
            'G', 'H', 'I', 'J', 'K', 'L',
            'M', 'N', 'O', 'P', 'Q', 'R',
            'S', 'T']
+botID = '518766307194175509'
 
 @bot.event
 async def on_ready():
     print('bot is ready')
-    
+
 def isHigherUp(role):
     return  role == 'Praefectus Germanicus' or role == 'Patricii Romani' or role == 'Senatus Germanicum'
 
 @bot.event
 async def on_reaction_add(reaction, user):
-    if not user.id == '502181308483633152':
+    if not user.id == botID:
         with open('userids.json') as f:
             userids = json.load(f)
         channel = reaction.message.channel
