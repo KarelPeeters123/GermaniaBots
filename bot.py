@@ -17,6 +17,10 @@ letters = ['A', 'B', 'C', 'D', 'E', 'F',
            'M', 'N', 'O', 'P', 'Q', 'R',
            'S', 'T']
 
+@bot.event
+async def on_ready():
+    print('bot is ready')
+    
 def isHigherUp(role):
     return  role == 'Praefectus Germanicus' or role == 'Patricii Romani' or role == 'Senatus Germanicum'
 
