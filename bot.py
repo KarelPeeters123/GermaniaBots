@@ -32,7 +32,7 @@ async def on_message(msg):
     content = msg.content
     response = ''
     words = content.split(' ')
-    if not msg.author.id == '502181308483633152' and re.search(r'[0-9]+ .*', content):
+    if not msg.author.id == botID and re.search(r'[0-9]+ .*', content):
         for i in range(1, len(words)):
             if re.search(r'inch', words[i]) and re.match(r'-?([0-9]\.)*[0-9]+', words[i-1]):
                 value = convert(words[i], float(words[i-1]))
@@ -55,7 +55,7 @@ async def on_message(msg):
                 index = random.randint(0, 5)
                 response += words[i - 1] + " " + words[i] + ' -> ' + str(value)[:5] + ' ' + units[index] + '.\n'
         await bot.send_message(msg.channel, response)
-    elif not msg.author.id == '502181308483633152' and re.search(r'[0-9]+(a|A|p|P)[mM] [a-zA-Z]', content):
+    elif not msg.author.id == botID and re.search(r'[0-9]+(a|A|p|P)[mM] [a-zA-Z]', content):
         for i in range(1, len(words)):
             if re.match(r'(CET|cet)', words[i]) and re.match(r'[0-9]+(a|A|p|P)[mM]', words[i - 1]):
                 value = convertTimezone(words[i], words[i - 1])
